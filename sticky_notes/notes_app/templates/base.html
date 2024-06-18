@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Site{% endblock %}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <style>
+        body {
+            font-family: 'Comfortaa';
+            background-color: #E0F7FA;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .columns {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .column {
+            width: 18%;
+            margin: 10px;
+            background-color: white;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .column h2 {
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+        }
+
+        .stickies {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100;
+            box-sizing: border-box;
+        }
+
+        .sticky-task {
+            width: calc(50% - 20px);
+            margin: 10px;
+            background-color: #faef8a;
+            padding: 10px;
+        }
+
+        .create-task-button {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: #FFF;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .create-task-button:hover {
+            background-color: #00448d;
+        }
+
+        .proceed-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4b97f5;
+            color: #FFF;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .proceed-button:hover {
+            background-color: #3e7ac5;
+        }
+
+        .return-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #575b60;
+            color: #FFF;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .return-button:hover {
+            background-color: #36393c;
+        }
+
+    </style>
+    {% block extra_head %}{% endblock %}
+</head>
+
+<body>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+
+</html>

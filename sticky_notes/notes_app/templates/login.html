@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Log In{% endblock %}
+
+{% block content %}
+    <h1>Login</h1>
+
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            <label for="id_username">Username:</label>
+            {{ form.username }}
+        </div>
+        <div>
+            <label for="id_password">Password:</label>
+            {{ form.password }}
+        </div>
+        <button type="submit" class='proceed-button'>Login</button>
+    </form>
+    <button onclick="window.location.href='{% url 'register' %}'"
+    class='proceed-button'>Create an Account</button>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}View Task{% endblock %}
+
+{% block content %}
+    <h1>View Task</h1>
+    
+    <div>
+        <h2>{{ task.title }}</h2>
+        <p>Description: {{ task.description }}</p>
+        <p>Owner: {{ task.owner }}</p>
+        <p>Creation Date: {{ task.creation_date }}</p>
+        <p>Due Date: {{ task.due_date }}</p>
+        <p>Status: {{ task.status }}</p>
+    </div>
+
+    <div>
+        <button onclick="window.location.href='{% url 'home' %}'" class='return-button'>Return Home</button>
+        <button onclick="window.location.href='{% url 'update_task' task.id %}'" class="proceed-button">Update Task</button>
+        <button onclick="if (confirm('Are you sure you want to delete this task?'))
+        { window.location.href='{% url 'delete_task' task.id %}'; }" class="proceed-button">Delete Task</button>
+    </div>
+{% endblock %}
